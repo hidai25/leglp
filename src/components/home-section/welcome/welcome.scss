@@ -1,0 +1,92 @@
+@use "../../../scss/" as *;
+
+.welcome {
+    // General content layout
+    &__content {
+        @include flex(center, center);
+    }
+
+    // Styling for the information and image sections
+    &__info, &__img {
+        width: 50%;
+        height: 100%;
+    }
+
+    // Specific styling for the information section
+    &__info {
+        @include flex(flex-start, flex-end);
+
+        &__content {
+            padding-left: 15rem;
+
+            // Styling for the description text
+            .description {
+                font-size: 1rem;
+            }
+
+            // Styling for the buttons container
+            .btns {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+
+                // Common styles for all direct child elements (buttons and links)
+                > * {
+                    margin-right: 1.7rem;
+                    height: 65px;
+                    width: 200px;
+                }
+
+                // Specific styling for the main button
+                .btn-main {
+                    padding: 0.5rem 3rem;
+                    line-height: normal;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+
+                // Styling for links, ensuring contained images are properly aligned
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    // Styling for the image section
+    &__img {
+        @include flex(flex-end, flex-start);
+
+        // Styling for the image slider
+        &__slide {
+            height: 70%;
+            width: 100%;
+            
+            img {
+                width: 30%;
+                height: 50%;
+                object-fit: contain;
+
+                // Adjustments for larger screens
+                @media (min-width: 768px) {
+                    height: 70%;
+                    width: 100%;
+                }
+            }
+
+            canvas {
+                display: block;
+            }
+        }
+    }
+}
