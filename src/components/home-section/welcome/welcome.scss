@@ -1,43 +1,66 @@
 @use "../../../scss/" as *;
 
 .welcome {
-    // General content layout
     &__content {
         @include flex(center, center);
     }
 
-    // Styling for the information and image sections
     &__info, &__img {
         width: 50%;
         height: 100%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 
-    // Specific styling for the information section
     &__info {
         @include flex(flex-start, flex-end);
+
+        @media (max-width: 768px) {
+            @include flex(center, center);
+            padding: 1rem;
+        }
 
         &__content {
             padding-left: 15rem;
 
-            // Styling for the description text
-            .description {
-                font-size: 1rem;
+            @media (max-width: 768px) {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
 
-            // Styling for the buttons container
+            .description {
+                font-size: 1rem;
+
+                @media (max-width: 768px) {
+                    font-size: 0.9rem;
+                }
+            }
+
             .btns {
                 display: flex;
                 align-items: center;
                 justify-content: start;
 
-                // Common styles for all direct child elements (buttons and links)
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
                 > * {
                     margin-right: 1.7rem;
                     height: 65px;
                     width: 200px;
+
+                    @media (max-width: 768px) {
+                        margin-right: 0;
+                        margin-bottom: 1rem;
+                        height: 50px;
+                        width: 150px;
+                    }
                 }
 
-                // Specific styling for the main button
                 .btn-main {
                     padding: 0.5rem 3rem;
                     line-height: normal;
@@ -46,9 +69,13 @@
                     align-items: center;
                     font-size: 1.2rem;
                     font-weight: 400;
+
+                    @media (max-width: 768px) {
+                        padding: 0.3rem 1rem;
+                        font-size: 1rem;
+                    }
                 }
 
-                // Styling for links, ensuring contained images are properly aligned
                 a {
                     display: flex;
                     justify-content: center;
@@ -63,24 +90,30 @@
         }
     }
 
-    // Styling for the image section
     &__img {
         @include flex(flex-end, flex-start);
 
-        // Styling for the image slider
+        @media (max-width: 768px) {
+            @include flex(center, center);
+        }
+
         &__slide {
             height: 70%;
             width: 100%;
+
+            @media (max-width: 768px) {
+                height: auto;
+                width: 90%;
+            }
             
             img {
                 width: 30%;
-                height: 50%;
+                height: 20%;
                 object-fit: contain;
 
-                // Adjustments for larger screens
-                @media (min-width: 768px) {
-                    height: 70%;
-                    width: 100%;
+                @media (max-width: 500px) {
+                    width: auto;
+                    height: auto;
                 }
             }
 
