@@ -76,9 +76,9 @@ const Welcome = props => {
 
   
     <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer">
-    {/* <Button className="btn"> */}
+   
         <img src={cta} alt="Download on the App Store" />
-    {/* </Button> */}
+
 </a>
 
 </div>
