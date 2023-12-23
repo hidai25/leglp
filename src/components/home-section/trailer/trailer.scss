@@ -1,125 +1,105 @@
 @use "../../../scss/" as *;
 
-.welcome {
+.trailer {
     &__content {
         @include flex(center, center);
-    }
+        background-image: url('../../../assets/images/bg3.jpg'); // Add the correct background image URL
+        background-size: cover; // Adjust the background size as needed
+        height: 100vh; // Set the height to cover the entire viewport
+        padding: 2rem; // Add padding as needed
 
-    &__info, &__img {
-        width: 50%;
-        height: 100%;
-
-        @media (max-width: 768px) {
-            width: 100%;
-        }
-    }
-
-    &__info {
-        @include flex(flex-start, flex-end);
-
-        @media (max-width: 768px) {
-            @include flex(center, center);
-            padding: 1rem;
-        }
-
-        &__content {
-            padding-left: 15rem;
-
-            @media (max-width: 768px) {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-
-            .description {
-                font-size: 1rem;
-
-                @media (max-width: 768px) {
-                    font-size: 0.9rem;
-                }
-            }
-
-            .btns {
-                display: flex;
-                align-items: center;
-                justify-content: start;
-
-                @media (max-width: 768px) {
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                > * {
-                    margin-right: 1.7rem;
-                    height: 65px;
-                    width: 200px;
-
-                    @media (max-width: 768px) {
-                        margin-right: 0;
-                        margin-bottom: 1rem;
-                        height: 50px;
-                        width: 150px;
-                    }
-                }
-
-                .btn-main {
-                    padding: 0.5rem 3rem;
-                    line-height: normal;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 1.2rem;
-                    font-weight: 400;
-
-                    @media (max-width: 768px) {
-                        padding: 0.3rem 1rem;
-                        font-size: 1rem;
-                    }
-                }
-
-                a {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    img {
-                        height: 100%;
-                        width: auto;
-                    }
-                }
-            }
-        }
-    }
-
-    &__img {
-        @include flex(flex-end, flex-start);
-
-        @media (max-width: 768px) {
-            @include flex(center, center);
+        &__img,
+        &__info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 1;
+            transform: translateX(0);
+            transition: transform 0.5s ease, opacity 0.5s ease;
         }
 
-        &__slide {
-            height: 70%;
-            width: 100%;
-
-            @media (max-width: 768px) {
-                height: auto;
-                width: 90%;
-            }
-            
+        &__img {
             img {
-                width: 30%;
-                height: 50%;
-                object-fit: contain;
+                max-width: 80%; // Adjust the image size as needed
+                height: auto;
+            }
+        }
 
-                @media (max-width: 768px) {
-                    width: 100%;
-                    height: auto;
-                }
+        &__info {
+            .title {
+                margin-top: 2rem; // Adjust the top margin as needed
+          font-weight: 100;
+                // Adjust the title without affecting the rest of the layout
+                // position: absolute;
+                // top: 50%; // Center vertically
+                left: 50%; // Center horizontally
+                right:50%;
+                transform: translate(-50%, -50%); // Adjust for exact centering
+                z-index: 2; // Ensure it's above other elements
             }
 
-            canvas {
-                display: block;
+
+
+
+            .video {
+                margin-top: 2rem; // Adjust the top margin as needed
+                width: 100%; // Make the video container full width
             }
         }
     }
+
+    // Apply animations only when active
+    &.active {
+        &__content__img,
+        &__content__info {
+            opacity: 1;
+            transform: translateX(-200px);
+            transition-delay: 0s;
+        }
+
+        &__content__img {
+            transform: translateX(-200px);
+        }
+
+        &__content__info {
+            transform: translateX(200px);
+        }
+
+        // Revert to visible and centered when active
+        &.active &__content__img,
+        &.active &__content__info {
+            transform: translateX(0);
+            opacity: 0;
+            transition-delay: 1s;
+        }
+    }
+    // Responsive adjustments
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    &__content {
+        height: auto; // Adjust height for smaller screens
+        padding: 1rem;
+
+        &__img {
+            img {
+                max-width: 100%; // Larger image on smaller screens
+            }
+        }
+
+        &__info {
+            .title {
+                font-size: 1.5rem; // Adjust title size for smaller screens
+            }
+
+            .video {
+                iframe {
+                    height: 200px; // Adjust iframe height for smaller screens
+                }
+            }
+        }
+    }
+}
 }
