@@ -89,15 +89,19 @@
 
         &__info {
             .title {
-                font-size: 1rem; // Smaller title font for mobile
-                position: static; // Reset position for mobile
-                margin-top: 1rem; // Adjust title margin for mobile
+                position: relative; // Reset position for mobile
+                margin-top: 6rem; // Reduced top margin for the title
+                left: 50%; // Center horizontally
+                transform: translateX(-50%); // Adjust for horizontal centering
             }
 
             .video {
                 iframe {
-                    height: 300px; // Taller video window for mobile
+                    height: 400px; // Taller video window for mobile
                     width: 100%; // Wider video window for mobile
+                    margin-top: 1rem; // Reduced top margin to bring video closer to the title
+                    margin-bottom: 2rem; // Adjust as needed
+                    position: relative;
                 }
             }
         }
