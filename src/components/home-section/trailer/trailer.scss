@@ -80,26 +80,28 @@
   // Responsive adjustments
   @media (max-width: 768px) {
     &__content {
-        height: auto; // Adjust height for smaller screens
+        height: auto;
         padding: 1rem;
 
         &__img {
-            img {
-                max-width: 100%; // Larger image on smaller screens
-            }
+            display: none; // Hide car image on mobile
         }
 
         &__info {
             .title {
-                font-size: 1.5rem; // Adjust title size for smaller screens
+                font-size: 1rem; // Smaller title font for mobile
+                position: static; // Reset position for mobile
+                margin-top: 1rem; // Adjust title margin for mobile
             }
 
             .video {
                 iframe {
-                    height: 200px; // Adjust iframe height for smaller screens
+                    height: 300px; // Taller video window for mobile
+                    width: 100%; // Wider video window for mobile
                 }
             }
         }
     }
 }
+
 }
