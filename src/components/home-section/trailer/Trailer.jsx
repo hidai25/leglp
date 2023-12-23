@@ -14,12 +14,11 @@ const Trailer = props => {
         <div className={`trailer ${props.isActive ? 'active' : ''}`} style={{ backgroundImage: `url(${bg3})` }}>
             <div className="overlay trailer__content">
                 <div className="trailer__content__img">
-                    <img src={rcar} alt="" />
+                    <img src={rcar} alt="" style={{ width: '80%', marginTop: '1rem' }} /> {/* Move car slightly lower */}
                 </div>
                 <div className="trailer__content__info">
                     <div className="title">
-                        <span>Compete to</span>
-                        <h2 className="main-color">Win!!!</h2>
+                        <h2 className="main-color">Compete to Win!!!</h2>
                     </div>
                     <div className="video">
                         <iframe
