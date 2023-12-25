@@ -5,18 +5,21 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0; // Ensure it spans the full width
     z-index: 100;
+    // background-color: $main-color; // Your header background color
     pointer-events: none;
 
     &__inner {
         @include flex(center, space-between);
         height: 100%;
+        padding: 0 1rem;
+        pointer-events: all;
     }
 
     &__logo {
         width: 145px;
-        pointer-events: visible;
+        pointer-events: all;
 
         img {
             width: 100%;
@@ -25,42 +28,82 @@
 
     &__nav {
         @include flex(center, space-between);
+        pointer-events: all;
 
         li ~ li {
             margin-left: 1rem;
         }
 
         a {
-            display: inline-block;
+            display: none;
             padding: 0.5rem;
             text-transform: uppercase;
             position: relative;
-            pointer-events: visible;
+            color: white; // Adjust color as needed
 
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                height: 2px;
-                width: 0;
-                background-color: $main-color;
-                transition: width 0.3s ease;
-            }
-
-            &:hover::before,
-            &:hover::after {
-                width: 50%;
-            }
-
-            &::before {
-                left: 0;
-                top: 0;
-            }
-
-            &::after {
-                right: 0;
-                bottom: 0;
+            // Hover effects
+            &:hover {
+                // Your hover effects
             }
         }
+    }
+
+    &__hamburger {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 102; // Higher z-index to keep it on top
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        // Hamburger icon styles
+        span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: $main-color; // Color for the hamburger lines
+        }
+    }
+
+    &__nav--mobile {
+        display: none;
+        position: fixed;
+        top: $header-height; // Position below the header
+        left: 0;
+        right: 0;
+        background-color: $main-color; // Mobile nav background color
+        z-index: 101;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 12px 20px;
+            border-bottom: 1px solid #ddd; // Optional separator
+
+            a {
+                display: block;
+                color: white; // Adjust color as needed
+                text-decoration: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            display: block;
+            transform: translateY(-100%); // Initially hide above
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &__nav--mobile.open {
+        transform: translateY(0); // Slide down into view
     }
 }

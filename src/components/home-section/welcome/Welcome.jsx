@@ -71,7 +71,7 @@ const Welcome = props => {
                     Gear up and steer your way through thrilling obstacle courses in our exciting Apple Watch car game. Experience the rush of dodging challenges at high speeds and master the art of precision driving. Each level brings a new set of obstacles, demanding sharper skills and quicker reflexes. Dive into an adrenaline-fueled adventure designed specifically for the Apple Watch, with intuitive controls and seamless gameplay. Navigate through a variety of dynamic environments, from bustling city streets to treacherous mountain paths. Join a community of racers, enthusiasts, and speed lovers as you climb the leaderboard and conquer the most challenging levels. Ready for the drive of your life? Buckle up, hit the road, and let's see what you've got!                    </div>
                     <div className="btns m-t-4">
                     <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer">
-    <Button className="btn-main">DOWNLOAD NOW</Button>
+    {/* <Button className="btn-main">DOWNLOAD NOW</Button> */}
 </a>
 
   

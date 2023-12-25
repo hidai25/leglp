@@ -1,59 +1,66 @@
 @use "../../../scss/" as *;
 
 .welcome {
+    // Adjust the styles for the entire welcome section
     &__content {
         @include flex(center, center);
     }
 
+    // Styles for the info and image sections
     &__info, &__img {
         width: 50%;
         height: 100%;
 
+        // Mobile-specific styles
         @media (max-width: 768px) {
             width: 100%;
         }
     }
 
+    // Styles for the info section
     &__info {
         @include flex(flex-start, flex-end);
 
+        // Mobile-specific styles
         @media (max-width: 768px) {
             @include flex(center, center);
             padding: 1rem;
         }
 
+        // Content within the info section
         &__content {
             padding-left: 15rem;
 
+            // Adjust padding for mobile
             @media (max-width: 768px) {
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
 
+            // Description styling
             .description {
                 font-size: 1rem;
 
+                // Adjust font size for mobile
                 @media (max-width: 768px) {
                     font-size: 0.9rem;
                 }
             }
 
+            // Styles for the buttons
             .btns {
                 display: flex;
                 align-items: center;
                 justify-content: start;
+                margin-bottom: 15%;
 
+                // Mobile-specific styles for buttons
                 @media (max-width: 768px) {
                     flex-direction: column;
                     align-items: center;
-                }
 
-                > * {
-                    margin-right: 1.7rem;
-                    height: 65px;
-                    width: 200px;
-
-                    @media (max-width: 768px) {
+                    // Spacing for buttons
+                    > * {
                         margin-right: 0;
                         margin-bottom: 1rem;
                         height: 50px;
@@ -61,6 +68,7 @@
                     }
                 }
 
+                // Styles for the main button
                 .btn-main {
                     padding: 0.5rem 3rem;
                     line-height: normal;
@@ -70,17 +78,23 @@
                     font-size: 1.2rem;
                     font-weight: 400;
 
+                    // Adjust for mobile
                     @media (max-width: 768px) {
                         padding: 0.3rem 1rem;
                         font-size: 1rem;
                     }
                 }
 
+                // Styles for link containing the button
                 a {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    width: 100%; // Take full width to center the content inside
+                    margin-right: 30%;
+                    
 
+                    // Image within the link
                     img {
                         height: 100%;
                         width: auto;
@@ -90,33 +104,28 @@
         }
     }
 
+    // Styles for the image section
     &__img {
         @include flex(flex-end, flex-start);
 
+        // Hide the image section on mobile
         @media (max-width: 768px) {
-            @include flex(center, center);
+            display: none;
         }
 
+        // Styles for the image slider
         &__slide {
             height: 70%;
             width: 100%;
 
-            @media (max-width: 768px) {
-                height: auto;
-                width: 90%;
-            }
-            
+            // Styles for individual images
             img {
                 width: 30%;
                 height: 20%;
                 object-fit: contain;
-
-                @media (max-width: 500px) {
-                    width: auto;
-                    height: auto;
-                }
             }
 
+            // Styles for the canvas (if any)
             canvas {
                 display: block;
             }
