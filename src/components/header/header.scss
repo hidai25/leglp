@@ -5,9 +5,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0; // Ensure it spans the full width
+    right: 0;
     z-index: 100;
-    // background-color: $main-color; // Your header background color
+    // background-color: $main-color; // Uncomment and set your header background color
     pointer-events: none;
 
     &__inner {
@@ -35,7 +35,6 @@
         }
 
         a {
-            display: none;
             padding: 0.5rem;
             text-transform: uppercase;
             position: relative;
@@ -44,6 +43,10 @@
             // Hover effects
             &:hover {
                 // Your hover effects
+            }
+
+            @media (max-width: 768px) {
+                display: none; // Hide on mobile screens
             }
         }
     }
