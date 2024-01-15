@@ -2,14 +2,14 @@
 
 .btn {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: $txt-color;
-    border: 0;
+    // border: 0;
     outline: 0;
     cursor: pointer;
-    padding: 1.6rem 5rem;
+    padding: 1.6rem 4rem;
     font-family: $font-family;
-    border-radius: 10px;
+    border-radius: 11px;
     // border-bottom-right-radius: $border-radius;
 
     &-main {

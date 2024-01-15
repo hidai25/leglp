@@ -62,27 +62,30 @@ const Welcome = props => {
             bgImage={wrn}
         >
             <div className="welcome__info relative">
-                <div className="welcome__info__content">
-                    <div className="title">
-                        <span>Welcome To</span>
-                        <h2 className="main-color">WristRoad</h2>
-                    </div>
-                    <div className="description m-t-4">
-                    Gear up and steer your way through thrilling obstacle courses in our exciting Apple Watch car game. Experience the rush of dodging challenges at high speeds and master the art of precision driving. Each level brings a new set of obstacles, demanding sharper skills and quicker reflexes. Dive into an adrenaline-fueled adventure designed specifically for the Apple Watch, with intuitive controls and seamless gameplay. Navigate through a variety of dynamic environments, from bustling city streets to treacherous mountain paths. Join a community of racers, enthusiasts, and speed lovers as you climb the leaderboard and conquer the most challenging levels. Ready for the drive of your life? Buckle up, hit the road, and let's see what you've got!                    </div>
-                    <div className="btns m-t-4">
-                    <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer">
-    {/* <Button className="btn-main">DOWNLOAD NOW</Button> */}
-</a>
-
-  
+<div className="welcome__info__content">
+    <div className="title">
+        <span>Welcome To</span>
+        <h2 className="main-color">WristRoad</h2>
+    </div>
+    <div className="description m-t-4">
+        <h3>Exciting Levels:</h3>
+        <ul>
+            <li>Navigate through diverse environments - from cityscapes to mountain trails.</li>
+            <li>Intuitive Controls: Effortlessly steer and maneuver with your watch's innovative features.</li>
+        </ul>
+        <blockquote>"Our users love the adrenaline rush! See what they say about conquering the tracks."</blockquote>
+    </div>
+    <div className="btn-group">
     <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer">
-   
+        <Button className="btn-main">DOWNLOAD NOW</Button>
+    </a>
+    <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer" className="btn-group">
         <img src={cta} alt="Download on the App Store" />
-
-</a>
+    </a>
+</div>
 
 </div>
-                </div>
+
             </div>
             <div className="welcome__img relative">
                 <div className="welcome__img__slide" id="welcome__img__slide">

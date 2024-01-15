@@ -14,11 +14,10 @@ const Credit = props => {
                     <h2 className="main-color">RACE</h2>
                 </div>
                 <div className="btns m-t-4">
-                <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer">
-    {/* <Button className="btn"> */}
-        <img src={cta} alt="Download on the App Store" />
-    {/* </Button> */}
+                <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer" className="image-link">
+    <img src={cta} alt="Download on the App Store" />
 </a>
+
                 </div>
             </div>
         </div>
