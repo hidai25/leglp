@@ -3,7 +3,7 @@
 .trailer {
     &__content {
         @include flex(center, center);
-        background-image: url('../../../assets/images/bg3.jpg'); // Add the correct background image URL
+        background-image: url('../../../assets/images/bg3.png'); // Add the correct background image URL
         background-size: cover; // Adjust the background size as needed
         height: 100vh; // Set the height to cover the entire viewport
         padding: 2rem; // Add padding as needed
