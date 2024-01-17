@@ -64,21 +64,21 @@ const Welcome = props => {
             <div className="welcome__info relative">
 <div className="welcome__info__content">
     <div className="title">
-        <span>Welcome To</span>
-        <h2 className="main-color">WristRoad</h2>
-    </div>
-    <div className="description m-t-4">
-        <h3>Exciting Levels:</h3>
-        <ul>
-            <li>Navigate through diverse environments - from cityscapes to mountain trails.</li>
-            <li>Intuitive Controls: Effortlessly steer and maneuver with your watch's innovative features.</li>
-        </ul>
-        <blockquote>"Our users love the adrenaline rush! See what they say about conquering the tracks."</blockquote>
-    </div>
+    <span>Welcome to</span>
+    <h2 className="main-color">WristRoad</h2>
+</div>
+<div className="description m-t-4">
+    <h3>Thrilling Adventure Awaits:</h3>
+    <ul>
+        <li>Explore stunning landscapes, from urban jungles to wild mountains.</li>
+        <li>Smooth Controls: Seamlessly navigate using your watch's cutting-edge technology.</li>
+    </ul>
+    <blockquote>"Join the thrill! Our community is raving about the exhilarating tracks!"</blockquote>
+</div>
     <div className="btn-group">
-    <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer">
+    {/* <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer">
         <Button className="btn-main">DOWNLOAD NOW</Button>
-    </a>
+    </a> */}
     <a href="https://apps.apple.com/us/app/wristroad/id6468395372" target="_blank" rel="noopener noreferrer" className="btn-group">
         <img src={cta} alt="Download on the App Store" />
     </a>
